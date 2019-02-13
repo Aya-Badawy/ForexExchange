@@ -1,0 +1,24 @@
+
+#land img{
+width:100%;
+height: 200px;
+}
+
+.x_content p{
+  font-size: 15px;
+}
+.x_content i{
+  color: blue;
+}
+
+.x_content strong ,.x_content strong a{
+  color: #ff0066;
+}
+.x_title h2{
+  color: red;
+}
+
+.exchange{
+  margin-left: 10%;
+  margin-right: 10%;
+}
