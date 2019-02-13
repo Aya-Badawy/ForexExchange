@@ -8,8 +8,8 @@ class dashboardPagesController extends Controller
 {
 
 
-  public function guide(){
-    return view('dashboared');
+  public function guide(Request $request){
+    return view('dashboared',['usere'=>$request->user()]);
   }
    public function apiKey(){
      return view('apiKey');
@@ -27,7 +27,7 @@ class dashboardPagesController extends Controller
      return view('followExchange');
    }
 
-  
+
 
 
 
