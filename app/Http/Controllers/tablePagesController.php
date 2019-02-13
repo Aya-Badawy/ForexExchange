@@ -6,20 +6,20 @@ use Illuminate\Http\Request;
 
 class tablePagesController extends Controller
 {
-     public function pageOne(){
-       return view('tablePage1');
+     public function pageOne(Request $request){
+       return view('tablePage1',['user'=>$request->user()]);
      }
 
-     public function pageTwo(){
-       return view('tablePage2');
+     public function pageTwo(Request $request){
+       return view('tablePage2',['user'=>$request->user()]);
      }
-     public function pageThree(){
-       return view('tablePage3');
+     public function pageThree(Request $request){
+       return view('tablePage3',['user'=>$request->user()]);
      }
-     public function pageFour(){
-       return view('tablePage4');
+     public function pageFour(Request $request){
+       return view('tablePage4',['user'=>$request->user()]);
      }
-     public function pageFive(){
-       return view('tablePage5');
+     public function pageFive(Request $request){
+       return view('tablePage5',['user'=>$request->user()]);
      }
 }
