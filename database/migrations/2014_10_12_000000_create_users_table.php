@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_activated')->default(0);
-            $table->string('apikey')->unique()->default('false');
+            $table->string('apikey')->default('false');
             $table->rememberToken();
             $table->timestamps();
         });

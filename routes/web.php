@@ -25,3 +25,7 @@ Route::get('/page2','tablePagesController@pageTwo');
 Route::get('/page3','tablePagesController@pageThree');
 Route::get('/page4','tablePagesController@pageFour');
 Route::get('/page5','tablePagesController@pageFive');
+
+
+// set Api keys.
+Route::post('/set_api','setApIKeyController@assigen');
