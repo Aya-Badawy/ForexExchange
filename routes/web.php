@@ -4,8 +4,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -19,6 +17,8 @@ Route::get('/apiKey','dashboardPagesController@apiKey');
 Route::get('/currencyEncoding','dashboardPagesController@currencyEncoding');
 Route::get('/currencyExchange','dashboardPagesController@currencyExchange');
 Route::get('/followExchange','dashboardPagesController@followExchange');
+Route::post('/Exchange','exchangeController@Exchange');
+
 
 //Currency Encoding (code)  table pagination routes.
 Route::get('/page1','tablePagesController@pageOne');

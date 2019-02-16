@@ -5,6 +5,11 @@
         <br>
         <div class="right_col" role="main">
         <br>
+        <?php if(isset($err)){ ?>
+          <div class="w3-panel w3-red">
+            <p>{{$err}}</p>
+             </div>
+           <?php } ?>
           <div class="w3-panel w3-pink">
          <h1 class="w3-opacity">
         <b>Currency Excahnge  Rates.....</b></h1>
@@ -20,14 +25,16 @@
        3- <strong>Exmaple : AUD,CHF,EUR or Just  AUD </strong><br>
      </p>
      </div>
+
     <p> <strong> #From : USD >>> #To : </strong></p>
-     <form>
+     <form method="post" action="Exchange">
+       @csrf
      <div class="form-row align-items-center">
        <div class="col-auto">
          <div class="input-group mb-2">
            <div class="input-group-prepend">
            </div>
-           <input type="text" name="currencies" class="form-control" id="inlineFormInputGroup" placeholder="ex :AUD,CHF,EUR ">
+           <input type="text" name="currencies" class="form-control" id="inlineFormInputGroup" placeholder="ex :AUD,CHF,EUR " required>
 
          </div>
        </div>
@@ -37,20 +44,6 @@
        </div>
      </div>
    </form>
-   <hr>
-   <table class="w3-table-all">
-    <thead>
-      <tr class="w3-red">
-        <th>Currency Pairs Exchange</th>
-        <th> Exchange Rate</th>
-      </tr>
-    </thead>
-    <tr>
-      <td>USDAUD</td>
-      <td>1.278384</td>
-    </tr>
-
-  </table>
 </div>
         </div>
 

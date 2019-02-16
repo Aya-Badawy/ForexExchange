@@ -18,6 +18,7 @@ class dashboardPagesController extends Controller
      return view('apiKey',['user'=>$request->user()]);
    }
 
+
    public function currencyEncoding(Request $request){
      return view('currencyEncoding',['user'=>$request->user()]);
    }
@@ -47,6 +48,7 @@ class dashboardPagesController extends Controller
       }
       return false;
    }
+
 
 
 
