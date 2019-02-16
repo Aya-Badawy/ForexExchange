@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\followExcahngeQueries;
+use Illuminate\Support\Facades\Auth;
 
 class dashboardPagesController extends Controller
 {
 
 
   public function guide(Request $request){
+
     return view('dashboared',['user'=>$request->user()]);
   }
    public function apiKey(Request $request){
@@ -20,11 +23,29 @@ class dashboardPagesController extends Controller
    }
 
    public function currencyExchange(Request $request){
-     return view('currencyExchange',['user'=>$request->user()]);
+     if($this->checkIfset()){
+       return view('currencyExchange',['user'=>$request->user()]);
+     }
+      return view('notActivateApi');
+
    }
 
    public function followExchange(Request $request){
-     return view('followExchange',['user'=>$request->user()]);
+
+     if($this->checkIfset()){
+       return view('followExchange',['user'=>$request->user()]);
+
+     }
+     return view('notActivateApi');
+   }
+
+   public function checkIfset(){
+      $user=followExcahngeQueries::getUserInfo();
+      //dd($user->apikey);
+      if($user->apikey){
+        return true;
+      }
+      return false;
    }
 
 

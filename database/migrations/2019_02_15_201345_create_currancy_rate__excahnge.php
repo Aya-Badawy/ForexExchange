@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateCurrancyRateExcahnge extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('currancy_rate__excahnge', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->boolean('is_activated')->default(0);
-            $table->string('apikey')->default(0);
-            $table->rememberToken();
+            $table->string('rate');
+            $table->string('server_timeStamp');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('currancy_rate__excahnge');
     }
 }

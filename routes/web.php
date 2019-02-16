@@ -5,6 +5,7 @@ Route::get('/', function () {
 });
 
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -29,3 +30,9 @@ Route::get('/page5','tablePagesController@pageFive');
 
 // set Api keys.
 Route::post('/set_api','setApIKeyController@assigen');
+
+// charting .
+Route::get('/charting','chartingController@charts');
+
+// set information about followed currency.
+Route::post('follow','setFollowedInfoController@setFollowInfo');
